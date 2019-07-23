@@ -11,7 +11,7 @@ exports.onRenderBody = (
   if (
     process.env.NODE_ENV !== 'production' ||
     !pluginOptions.cookihubId ||
-    !pluginOptions.gtagId
+    !pluginOptions.trackingId
   ) {
     return null;
   }
@@ -67,13 +67,13 @@ exports.onRenderBody = (
         onInitialise: function(status) {
           if (this.hasConsented('analytics')) {
             window.GATSBY_PLUGIN_COOKIEHUB_DISABLED_ANALYTICS = false;
-            gtag('config', ${pluginOptions.trackingId});            
+            gtag('config', '${pluginOptions.trackingId})';            
           }
         },
         onAllow: function(category) {
           if (category == 'analytics') {
             window.GATSBY_PLUGIN_COOKIEHUB_DISABLED_ANALYTICS = false;
-            gtag('config', ${pluginOptions.trackingId});
+            gtag('config', '${pluginOptions.trackingId}');
           }
         },
         onRevoke: function(category) {
