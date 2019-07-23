@@ -67,7 +67,7 @@ exports.onRenderBody = (
         onInitialise: function(status) {
           if (this.hasConsented('analytics')) {
             window.GATSBY_PLUGIN_COOKIEHUB_DISABLED_ANALYTICS = false;
-            gtag('config', '${pluginOptions.trackingId})';            
+            gtag('config', '${pluginOptions.trackingId}');            
           }
         },
         onAllow: function(category) {
